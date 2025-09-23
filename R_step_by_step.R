@@ -169,6 +169,7 @@ as.Date(new_date, tryFormats = c("%y-%m-%d"))
 #' values.
 #'
 #' ### Vectors
+# Vectors ----
 #'
 #' The default data structure in R is a `vector`. You create one with the `c()`
 #' command with any number of arguments. All items in a vector have to be the
@@ -177,6 +178,10 @@ as.Date(new_date, tryFormats = c("%y-%m-%d"))
 #+ vectors_c
 print(foo <- c(56,78,34,97,2,86))
 print(baz <- c(34,23,94,3,12,53))
+
+# create a vector from the numbers 5, 7, and 18
+foo <- c(5,7,18)
+
 #' Since the default data structure in R is a `vector`, if you
 #' create some sort of simple value you are creating a `vector` even if you are
 #' not using `c()`... it just happens to be a `vector` of length 1. These
@@ -281,6 +286,7 @@ max(bat)
 #+ vectors_aggregate
 
 #' ### Data Frames
+# Data Frame ----
 #'
 #' You can bundle several vectors of the same length together into a
 #' `data.frame` using the `data.frame()` command. A `data.frame` is a tabular
@@ -298,6 +304,13 @@ dim(iris)
 nrow(iris)
 ncol(iris)
 names(iris)
+c("Petal.Length" ,"Petal.Width","Species" )
+iris[,3:4]
+iris[,c("Petal.Length" ,"Petal.Width","Species" )]
+
+iris[2:5,2:3]
+sapply
+
 head(iris)
 tail(iris)
 head(iris,10)
