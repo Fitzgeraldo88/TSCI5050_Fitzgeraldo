@@ -35,6 +35,8 @@ library(broom); # allows to give clean dataset
 library(dplyr); #add dplyr library
 
 options(max.print=500);
+options(datatable.na.strings=c("PS","NA"))
+options(max.print=100) #set options to print 100
 panderOptions('table.split.table',Inf); panderOptions('table.split.cells',Inf);
 whatisthis <- function(xx){
   list(class=class(xx),info=c(mode=mode(xx),storage.mode=storage.mode(xx)
@@ -380,6 +382,11 @@ summary(externaldata)
 
 sapply(externaldata,class)
 
-processeddata<-mutate(externaldata,randomnumber=rnorm(n=n()))
+processeddata<-mutate(externaldata,
+                      randomnumber=rnorm(n=n()),
+                      month=sample(month.abb,size=n(), replace = TRUE ))
 
-
+nrow(externaldata)
+NROW(externaldata)
+table(externaldata$INSTNM) %>% sort(decreasing = TRUE) %>% head(n=20)
+head(sort(table(externaldata$INSTNM), decreasing = TRUE), n=20)
