@@ -390,3 +390,6 @@ nrow(externaldata)
 NROW(externaldata)
 table(externaldata$INSTNM) %>% sort(decreasing = TRUE) %>% head(n=20)
 head(sort(table(externaldata$INSTNM), decreasing = TRUE), n=20)
+
+#" ## plotting data
+
